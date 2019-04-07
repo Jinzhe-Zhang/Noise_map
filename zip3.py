@@ -2,7 +2,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 import random
-m=16
+m=128
 image = Image.new('RGB',(320,240))
 font = ImageFont.truetype('msyh.ttc',48)
 draw = ImageDraw.Draw(image)
