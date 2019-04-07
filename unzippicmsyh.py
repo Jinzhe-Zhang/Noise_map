@@ -4,7 +4,7 @@ from PIL import ImageDraw
 import random
 WIDTH=320
 HEIGHT=240
-RANGE=0
+RANGE=1
 m=16
 def color(i,j,rangee):
     ary=[]

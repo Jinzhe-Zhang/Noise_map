@@ -2,10 +2,11 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 import random
-WIDTH=320
-HEIGHT=240
-RANGE=0
+WIDTH=1280
+HEIGHT=960
+RANGE=7
 m=16
+def func(i):
 def color(i,j,rangee):
     ary=[]
     for ii in range(i-rangee,i+rangee+1):
@@ -20,12 +21,9 @@ def avg(a):
             b[j]+=i[j]
     for i in range(len(b)):
         b[i]//=len(a)
-    if sum(b)>384:
-        return tuple(255 for _ in range(len(b)))
-    else:
-        return tuple(0 for _ in range(len(b)))
-image = Image.open('pic_m16.png')
-image2 = Image.new('RGB',(320,240))
+    return tuple(b)
+image = Image.open('pic.png')
+image2 = Image.new('RGB',(WIDTH,HEIGHT))
 for i in range(image.size[0]):
     for j in range(image.size[1]):
         image2.putpixel((i,j),avg(list(map(lambda x:image.getpixel(x),color(i,j,RANGE)))))
